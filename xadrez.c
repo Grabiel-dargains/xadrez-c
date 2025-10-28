@@ -1,6 +1,7 @@
+
+
 int main() {
 
-    //movimentos da torre
     char torredir, bispodir, rainhadir, cavalodir;
     int escolha, torrenum, bisponum, rainhanum;
 
@@ -13,27 +14,21 @@ int main() {
         scanf("%c", torredir);
         printf("Por quantas casas moverá a Torre?");
         scanf("%i", torrenum);
-        for (int i = 0; i < torrenum; i++){
-            printf(torredir);
-        }
+        moverTorre(torrenum, torredir);
 
         case 2: 
         printf("Em qual direção irá mover o Bispo? NE, SE, SO ou NO");
         scanf("%c", bispodir);
         printf("Por quantas casas moverá a Bispo?");
         scanf("%i", bisponum);
-        for (int i = 0; i < bisponum; i++){
-            printf(bispodir);
-        }
+        moverBispo(bisponum, bispodir);
 
         case 3: 
         printf("Em qual direção irá mover a Rainha? N, NE, L, SE, S, SO, O ou NO");
         scanf("%c", rainhadir);
         printf("Por quantas casas moverá a Rainha?");
         scanf("%i", rainhanum);
-        for (int i = 0; i < rainhanum; i++){
-            printf(rainhadir);
-        }
+        moverRainha(rainhanum, rainhadir);
 
         case 4: 
         printf("Em qual direção irá mover o Cavalo? NE, SE, SO ou NO");
@@ -67,3 +62,24 @@ int main() {
     }
     return 0;
 }
+
+void moverTorre(int casas, char dir){
+        if (casas > 0){
+            printf(dir);
+            moverTorre(casas - 1, dir);
+        }
+    }
+
+    void moverBispo(int casas, char dir){
+        if (casas > 0){
+            printf(dir);
+            moverBispo(casas - 1, dir);
+        }
+    }
+
+    void moverRainha(int casas, char dir){
+        if (casas > 0){
+            printf(dir);
+            moverRainha(casas - 1, dir);
+        }
+    }
